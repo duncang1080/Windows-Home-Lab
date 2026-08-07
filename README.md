@@ -1,5 +1,5 @@
 # Windows-11-Bootable-Drive
-Old Asus Laptop that sat for about 4 years. Windows was corrupted and on first bootup bios displayed no boot option and could only open BIOS.
+Old Asus Laptop that sat for about 4 years. Windows was corrupted and on first bootup BIOS displayed no boot option.
 <img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/8692ca5c-7e9e-4b21-9573-8d9a1dbdc2cc" />
 Open BIOS menu see that SSD is still recognized by the Asus laptop.
 <img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/d73c166b-7f4e-4c54-9183-addedb3b20eb" />
