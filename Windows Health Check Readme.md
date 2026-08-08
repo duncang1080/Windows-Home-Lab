@@ -13,7 +13,7 @@ Using the command "Get-ComputerInfo" on CMD with powershell, I was able to find 
 <img width="1629" height="971" alt="image" src="https://github.com/user-attachments/assets/95e1044c-ee3d-486a-ac48-5f0177aab272" />
 Next I checked the status of device manager and found some errors.
 <img width="1903" height="1000" alt="image" src="https://github.com/user-attachments/assets/d2062592-0a2a-42a0-8e72-e7d8620280b1" />
-Many of the errors are consistently related to the PCI slot on the motherboard.
+Many of the errors are consistently related to drivers on the motherboard.
 Went to device manager and noticed the errors and looked to update the drivers.
 <img width="527" height="752" alt="image" src="https://github.com/user-attachments/assets/9c018727-7b64-4c86-b6fb-8c0407d6532a" />
 <img width="613" height="446" alt="image" src="https://github.com/user-attachments/assets/cb419d8e-bfa6-4235-b061-c9282e48f5c1" />
