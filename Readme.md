@@ -8,4 +8,4 @@ RAM,
 Model of Storage and amount it has,
 Network adapter, 
 and device manager status. 
-
+<img width="1174" height="982" alt="image" src="https://github.com/user-attachments/assets/7fc23f1e-6409-466f-8468-2fb603f41441" />
