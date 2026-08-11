@@ -14,3 +14,35 @@ Downloaded that driver and installed
 <img width="498" height="371" alt="image" src="https://github.com/user-attachments/assets/4add4ea0-5e6a-43e7-8105-f72b1d0d9420" />
 <img width="771" height="564" alt="image" src="https://github.com/user-attachments/assets/979bfe94-9ac5-4b51-b961-9a62659f17f9" />
 Base system device no longer listed after installation. 
+Onto the next device, PCI Data Acquisition and Signal Processing Controller
+<img width="893" height="661" alt="image" src="https://github.com/user-attachments/assets/6f4d6a46-a25e-4bb4-b33c-bb5589469b03" />
+Open Properties of the device and find the hardware IDs
+<img width="396" height="448" alt="image" src="https://github.com/user-attachments/assets/cef1ddc7-74bc-4390-8131-00d750ac23f7" />
+
+
+"Dev_1903" Tells me that this is a driver corresponding with the thermal framework of the processor. 
+<img width="1942" height="223" alt="image" src="https://github.com/user-attachments/assets/8243888a-e17c-4a90-92e3-e298731b9cf0" />
+Download the Driver
+<img width="1123" height="624" alt="image" src="https://github.com/user-attachments/assets/d87d99d9-3ed7-4b8c-85f1-87513fa3da0d" />
+Open the setup within the file
+<img width="500" height="397" alt="image" src="https://github.com/user-attachments/assets/6b76ae42-d970-4d7b-9c54-09d717726f41" />
+Once complete hit "Next" and then "Finish" 
+<img width="781" height="565" alt="image" src="https://github.com/user-attachments/assets/55a0cdd1-01af-4191-b17b-213361c0d948" />
+"PCI Data Acquisition and Signal Processing Controller" as well as the several "Unknown device" Errors are now gone
+Finally I am left with a "PCI Simple Communications Controller" error
+<img width="395" height="450" alt="image" src="https://github.com/user-attachments/assets/eda43bd9-2976-4d25-b55c-4a0eda6341e2" />
+Same Process, find the device IDs to be able to find the correct driver to install.
+"Dev_A360" Tells me that this driver is for Management and Engine Components 
+<img width="1307" height="172" alt="image" src="https://github.com/user-attachments/assets/a5f66dc4-60e7-4328-888f-3f0769b36282" />
+Download the driver
+<img width="1129" height="623" alt="image" src="https://github.com/user-attachments/assets/d00d2c2e-f234-4513-acaa-252baec8f8c9" />
+Run the setup
+<img width="480" height="394" alt="image" src="https://github.com/user-attachments/assets/17150c49-d2c0-4cf0-8896-ed0ae087d1af" />
+Go through the prompts and close other programs
+<img width="489" height="397" alt="image" src="https://github.com/user-attachments/assets/638aecfb-4063-4bec-9bf5-a2029fb4b7cd" />
+Driver installed
+<img width="332" height="474" alt="image" src="https://github.com/user-attachments/assets/c064ed8f-dbca-404f-8e18-788ab41db439" />
+
+
+
+No more driver errors
