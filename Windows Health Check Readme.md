@@ -14,7 +14,7 @@ Using the command "Get-ComputerInfo" on CMD with powershell, I was able to find 
 Next I checked the status of device manager and found some errors.
 <img width="1903" height="1000" alt="image" src="https://github.com/user-attachments/assets/d2062592-0a2a-42a0-8e72-e7d8620280b1" />
 Many of the errors are consistently related to drivers on the motherboard.
-See "PCE Device Driver Installation Read.me" for how I reslove this issue
+See ["PCE Device Driver Installation Read.me"](https://github.com/duncang1080/Windows-Home-Lab/blob/main/PCE%20Device%20Driver%20Installation%20Readme.md) for how I reslove this issue
 Next step is in CMD type "sfc /scannow" I am checking all protected operating files, and the system will repair or replace any missing, damaged, or changed files with a cached copy.
 <img width="975" height="501" alt="image" src="https://github.com/user-attachments/assets/9849b861-b96d-4a21-a385-2d9ea1252d9e" />
 Scan took 5 minutes and came up with nothing. 
