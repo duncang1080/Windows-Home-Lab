@@ -32,4 +32,5 @@ In Event Viewer I check "System" and sort the level of the errors so that I can 
 This computer's battery is not functioning and if it is unplugged it power will cut immediately.  
 These are the Events and the IDs I found:
 <img width="585" height="301" alt="image" src="https://github.com/user-attachments/assets/efe0c566-59ff-46e4-88b6-0edcf1d5ff02" />
-I will show how I resolve these in "Event Viewer Investigation Readme.md"
+I will show how I resolve these in ["Event Viewer Investigation Readme.md"](https://github.com/duncang1080/Windows-Home-Lab/blob/main/Event%20Viewer%20Investigation%20Readme.md)
+
