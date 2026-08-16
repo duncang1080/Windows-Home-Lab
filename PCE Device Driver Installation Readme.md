@@ -12,7 +12,7 @@ Went to device manager and noticed the errors and looked to update the drivers.
   <img width="611" height="243" alt="image" src="https://github.com/user-attachments/assets/26f6742c-ae79-47f9-8118-31824ba320f2" />
 
  ## Finding Hardware IDs 
- ### Base System
+ ### Base System Device
 Starting with the Base System
 <br>
 <img width="357" height="493" alt="image" src="https://github.com/user-attachments/assets/dab0af84-65fd-4210-a8fa-50acc6aed37d" />
