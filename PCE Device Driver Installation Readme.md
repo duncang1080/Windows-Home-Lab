@@ -20,7 +20,7 @@ Starting with the Base System
 <img width="408" height="459" alt="image" src="https://github.com/user-attachments/assets/9ba0b4e2-a3a0-49e2-91cf-38da8c62aadd" />
 <br>
 Going into the properties of the base system device to find hardware ids so I can update them with the proper one.
-On ASUS's Support page, you can find different drivers to download.
+On [ASUS's Support page](https://www.asus.com/supportonly/gl703gs/helpdesk_download/), you can find different drivers to download.
 <img width="1320" height="194" alt="image" src="https://github.com/user-attachments/assets/fba53438-8f91-4729-96ff-d0ae35b641eb" />
 Downloaded that driver and installed
 <br>
@@ -55,7 +55,7 @@ Base system device no longer listed after installation.
   <br>
   <img width="519" height="380" alt="image" src="https://github.com/user-attachments/assets/617184ba-4d18-499c-a366-f4498f64b10d" />
 
-<img width="395" height="450" alt="image" src="https://github.com/user-attachments/assets/eda43bd9-2976-4d25-b55c-4a0eda6341e2" 
+<img width="395" height="450" alt="image" src="https://github.com/user-attachments/assets/eda43bd9-2976-4d25-b55c-4a0eda6341e2" /> 
 Same Process, find the device IDs to be able to find the correct driver to install.
 "Dev_A360" Tells me that this driver is for Management and Engine Components 
 <img width="1307" height="172" alt="image" src="https://github.com/user-attachments/assets/a5f66dc4-60e7-4328-888f-3f0769b36282" />
