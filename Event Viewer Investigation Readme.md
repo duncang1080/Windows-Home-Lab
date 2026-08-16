@@ -1,11 +1,13 @@
+## Initial Event Log Findings
+
 <img width="585" height="301" alt="image" src="https://github.com/user-attachments/assets/e9f47199-17d4-4db6-80ef-193139c9a26e" />
 <p align="left">Off the bat, this laptop has a nonfunctioning battery which likely solves the Kernel-Power Error
 The second one is the TPM-WMI which is related to the boot process will be investigated
 Next would be the numerous BitLocker-Driver Events, which is likely the BitLocker Drive Encryption.
 Then I will investigate the Service Control Manager telling me that Widows services on the boot up are having problems. The computer is slow on start up so Investigating this could help that. Lastly are WindowsUpdateClient 20, and Time-Service 34. I will see if there is any issues with the recent update I did on the computer, and the Time service is likely linked the the improper shut down due to the battery. The time on the laptop is currently wrong. 
 
-Taking a Look at TPM-WMI 1041 and 1801, I learn what the issue is:
-<img width="617" height="426" alt="image" src="https://github.com/user-attachments/assets/606172d1-2fb4-496b-a270-e3b6b5d6628f" />
+## Event 1041 and 1801
+ <img width="617" height="426" alt="image" src="https://github.com/user-attachments/assets/606172d1-2fb4-496b-a270-e3b6b5d6628f" />
 <p align="left">TPM-WMI 1041: A critical component failed a pre-attestation health check.
 I open File Explorer and type this path into the address bar: "C:\Windows\Logs\Measured Boot" Looking for the JSON File described in the message. 
 <img width="1118" height="293" alt="image" src="https://github.com/user-attachments/assets/c69dab19-3e17-42c0-97bc-3eb226aaab66" />
@@ -15,7 +17,7 @@ It tells me that the system is recognizing the TPM and communicating with it. Th
 <img width="615" height="430" alt="image" src="https://github.com/user-attachments/assets/11be246b-8ba8-4655-82d5-70aba4c20681" />
 
 <p align="left">Taking a look at 1801 now, it says that secure boot certificates are available but were not applied. 
-Checking the state of the BIOS and secure boot with the run box typing "msinfo32" to check this.
+Checking the state of the BIOS and secure boot with the run box typing `msinfo32` to check this.
 <img width="399" height="197" alt="image" src="https://github.com/user-attachments/assets/3a559ea3-b6b3-43b7-a3ff-fbe4ffc64ceb" />
 <img width="1547" height="824" alt="image" src="https://github.com/user-attachments/assets/142409a8-1e72-4756-bbbf-b1dbf3ab9d63" />
 Can see that BIOS is normal and secure boot is on
