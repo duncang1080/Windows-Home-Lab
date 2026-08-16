@@ -25,6 +25,7 @@ On [ASUS's Support page](https://www.asus.com/supportonly/gl703gs/helpdesk_downl
 Downloaded that driver and installed
 <br>
 <img width="506" height="397" alt="image" src="https://github.com/user-attachments/assets/8d8f87e7-907a-4957-9fce-2ea72e8b6266" />
+<br>
 <img width="498" height="371" alt="image" src="https://github.com/user-attachments/assets/4add4ea0-5e6a-43e7-8105-f72b1d0d9420" />
 <br>
 Base system device no longer listed after installation. 
@@ -52,22 +53,27 @@ Base system device no longer listed after installation.
 <br>
 
   ### PCI Simple Communications Controller
-  <br>
-  <img width="519" height="380" alt="image" src="https://github.com/user-attachments/assets/617184ba-4d18-499c-a366-f4498f64b10d" />
-
+Same Process, find the device IDs to be able to find the correct driver to install
+<br>
+<img width="519" height="380" alt="image" src="https://github.com/user-attachments/assets/617184ba-4d18-499c-a366-f4498f64b10d" />
+<br>
 <img width="395" height="450" alt="image" src="https://github.com/user-attachments/assets/eda43bd9-2976-4d25-b55c-4a0eda6341e2" /> 
-Same Process, find the device IDs to be able to find the correct driver to install.
+<br><br>
 "Dev_A360" Tells me that this driver is for Management and Engine Components 
 <img width="1307" height="172" alt="image" src="https://github.com/user-attachments/assets/a5f66dc4-60e7-4328-888f-3f0769b36282" />
-Download the driver
-<img width="1129" height="623" alt="image" src="https://github.com/user-attachments/assets/d00d2c2e-f234-4513-acaa-252baec8f8c9" />
+<br>
 Run the setup
-<img width="480" height="394" alt="image" src="https://github.com/user-attachments/assets/17150c49-d2c0-4cf0-8896-ed0ae087d1af" />
+<img width="1129" height="623" alt="image" src="https://github.com/user-attachments/assets/d00d2c2e-f234-4513-acaa-252baec8f8c9" />
+<br><br>
 Go through the prompts and close other programs
+<br>
+<img width="480" height="394" alt="image" src="https://github.com/user-attachments/assets/17150c49-d2c0-4cf0-8896-ed0ae087d1af" />
+<br><br>
 <img width="489" height="397" alt="image" src="https://github.com/user-attachments/assets/638aecfb-4063-4bec-9bf5-a2029fb4b7cd" />
-Driver installed
+<br>
+Driver installed with no more driver errors
+<br>
 <img width="332" height="474" alt="image" src="https://github.com/user-attachments/assets/c064ed8f-dbca-404f-8e18-788ab41db439" />
 
 
 
-No more driver errors
