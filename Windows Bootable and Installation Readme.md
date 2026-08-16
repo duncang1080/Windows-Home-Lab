@@ -11,7 +11,7 @@ Installed Bootable flash drive onto Asus laptop and was prompted with Windows 11
 <img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/116ee004-26b2-4fb0-96b2-aaac059d23d7" />
 Encountered an error with the laptop's SSD's data and had to open command prompt to manually clear it. 
 <img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7c10655-0a77-4f88-afc1-14a6b146cd33" />
-In command prompt, used "disk part" followed by "list disk" to find the SSD that did not allow Windows to be installed on and manually cleared it.
+In command prompt, used `disk part` followed by "list disk" to find the SSD that did not allow Windows to be installed on and manually cleared it.
 <img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/c70c0034-01a6-4e3b-ac16-22cf8b56c4c3" />
 After, Windows was ready to install onto the SSD.
 <img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/e4842f1d-2ade-411d-b3f6-7fb675a94416" />
