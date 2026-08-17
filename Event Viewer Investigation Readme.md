@@ -6,7 +6,7 @@ Then I will investigate the Service Control Manager telling me that Widows servi
 
  <img width="585" height="301" alt="image" src="https://github.com/user-attachments/assets/e9f47199-17d4-4db6-80ef-193139c9a26e" />
 
-## Event 1041 and 1801
+## TPM-WMI Event 1041 and 1801
 <p align="left">TPM-WMI 1041: A critical component failed a pre-attestation health check.
 I open File Explorer and type this path into the address bar: `C:\Windows\Logs\Measured Boot` Looking for the JSON File described in the message. 
 <br><br>
@@ -48,3 +48,5 @@ Select-Object UEFICA2023Status, WindowsUEFICA2023Capable, UEFICA2023Error, UEFIC
 <img width="885" height="191" alt="image" src="https://github.com/user-attachments/assets/857e946c-c8a9-4e4c-ba29-aca2f258835d" />
 <br>
 That command shows that the event error has been fixed and this was just a historical event, I concluded that the TPM is functioning properly and that the boot is running the 2023 system. 
+
+## Service Control Manager Events 7000,7009,7011,7022
