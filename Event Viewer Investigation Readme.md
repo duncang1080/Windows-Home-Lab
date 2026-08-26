@@ -60,7 +60,26 @@ Look for "7000" under event ID
 Issue is related to the Background Intelligent Transfer Service (BITS)  
 <br> 
 In powershell, run `Get-Service BITS` 
+<br>
 <img width="634" height="264" alt="image" src="https://github.com/user-attachments/assets/05395889-626d-4c95-bf8f-ee655f14f401" />
 <br>
-
-
+Its status is stopped
+Run the command `Get-Service BITS` to get windows to run it.
+<br>
+<img width="970" height="344" alt="image" src="https://github.com/user-attachments/assets/09b58a87-689a-4e66-a631-77b02cccc97b" />
+I let it sit for about 5 minutes with no message confirming BITS had an error or is running. 
+I once again run `Get-Service BITS` and it is now running
+<img width="962" height="499" alt="image" src="https://github.com/user-attachments/assets/28228533-7820-439b-81d3-e9687d8aacb2" />
+Run the command `Get-WinEvent -FilterHashtable @{LogName= 'System'; ID=7000} -MaxEvents 5 | Select-Object TimeCreated, ID, ProviderName, Message` 
+This will show the last 5 7000 Event IDs Made
+<img width="1258" height="205" alt="image" src="https://github.com/user-attachments/assets/42f8ce40-067f-4ef0-bb82-5439a2652fb9" />
+<br>
+Despite not running initially, there was no new event made. 
+Run command `Stop-Service BITS` and then `Measure-Command { Start-Service BITS }`
+<br>
+<img width="889" height="275" alt="image" src="https://github.com/user-attachments/assets/070c2cbd-c05e-4d87-b7d8-3feb36a311b3" />
+<br>
+BITS started in 4.3 seconds which is normal.
+<br>
+**Conclusion:** Given that BITS will start at a normal time and is not being hung up. There are also no additional event ID 7000 codes appearing on event ID, this is a historical issues that needs no further investigation.  
+### Event 7009
