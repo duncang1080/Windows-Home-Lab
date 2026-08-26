@@ -2,7 +2,7 @@
 Off the bat, this laptop has a nonfunctioning battery which likely solves the Kernel-Power Error
 The second one is the TPM-WMI which is related to the boot process will be investigated
 Next would be the numerous BitLocker-Driver Events, which is likely the BitLocker Drive Encryption.
-Then I will investigate the Service Control Manager telling me that Widows services on the boot up are having problems. The computer is slow on start up so Investigating this could help that. Lastly are WindowsUpdateClient 20, and Time-Service 34. I will see if there is any issues with the recent update I did on the computer, and the Time service is likely linked the the improper shut down due to the battery. The time on the laptop is currently wrong.
+Then I will investigate the Service Control Manager telling me that Widows services on the boot up are having problems. The computer is slow on start up so Investigating this could help that. Lastly are WindowsUpdateClient 20, and Time-Service 34. I will see if there is any issues with the recent update I did on the computer, and the Time service is likely linked the the improper shut down due to the battery. The time on the laptop is currently wrong.  
 
  <img width="585" height="301" alt="image" src="https://github.com/user-attachments/assets/e9f47199-17d4-4db6-80ef-193139c9a26e" />
 
@@ -50,3 +50,17 @@ Select-Object UEFICA2023Status, WindowsUEFICA2023Capable, UEFICA2023Error, UEFIC
 That command shows that the event error has been fixed and this was just a historical event, I concluded that the TPM is functioning properly and that the boot is running the 2023 system. 
 
 ## Service Control Manager Events 7000,7009,7011,7022
+### Event 7000
+Open Event Viewer go to Windows Logs > System
+<img width="838" height="280" alt="image" src="https://github.com/user-attachments/assets/61dc74f4-6a67-4ebe-9905-1989b792fe2d" />
+<br>
+Look for "7000" under event ID 
+<img width="1365" height="624" alt="image" src="https://github.com/user-attachments/assets/6c784cc0-43b9-4eff-bf9a-77a8ecf7eac7" />
+<br>
+Issue is related to the Background Intelligent Transfer Service (BITS)  
+<br> 
+In powershell, run `Get-Service BITS` 
+<img width="634" height="264" alt="image" src="https://github.com/user-attachments/assets/05395889-626d-4c95-bf8f-ee655f14f401" />
+<br>
+
+
