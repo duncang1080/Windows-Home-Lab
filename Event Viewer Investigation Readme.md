@@ -99,4 +99,7 @@ Select-Object TimeCreated, Message` This will zoom out to the last 10 events and
 Running command `Get-WinEvent -FilterHashtable @{LogName='System'; StartTime=(Get-Date '8/31/2026 9:40 AM')} | Select-Object TimeCreated, ID, ProviderName, Message` I can see what goes on that triggers these events. 
 <img width="1913" height="849" alt="image" src="https://github.com/user-attachments/assets/8ed22b47-4519-4742-8065-68b84d998c75" />
 <br>
-
+This shows three distinct events with additional context of what was happening before event 7009 was triggered.
+The second sequence draws my attention more because I see Event 20 in there which was part of my initial list. So there could be a possible link here. 
+Taking a look at event 43, the message will say what update Windows was trying to install. 
+<img width="626" height="435" alt="image" src="https://github.com/user-attachments/assets/bb707af9-b8cd-43de-905f-79affdefd317" />
