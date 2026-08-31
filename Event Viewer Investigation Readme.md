@@ -83,3 +83,20 @@ BITS started in 4.3 seconds which is normal.
 <br>
 **Conclusion:** Given that BITS will start at a normal time and is not being hung up. There are also no additional event ID 7000 codes appearing on event ID, this is a historical issues that needs no further investigation.  
 ### Event 7009
+Go to Event Viewer > Windows Logs > System > Event ID 7009
+<img width="1251" height="594" alt="image" src="https://github.com/user-attachments/assets/098d51aa-135b-46e9-8ec4-cf4861e0b45f" />
+<br>
+In powershell, run command `Get-Service InstallService` followed by `sc.exe qc InstallService` to first find the status of the system and then the Startup type, Dependency, and Service account. 
+<img width="910" height="541" alt="image" src="https://github.com/user-attachments/assets/5fda3ff3-e9a5-4a25-89d3-9832989a744d" />
+<br>
+Next is to find out how recent this event has been reoccurring, I run command `Get-WinEvent -FilterHastable @{LogName= 'System'; ID=7009} -Max Events 5 | Select-Object Time Created, ID, ProvideName, Message` This will tell me the last 5 7009 EventIDs that happened. 
+<img width="1103" height="628" alt="image" src="https://github.com/user-attachments/assets/c04df235-e4ce-43f7-ab00-37354ca64432" />
+<br> 
+Need to get more info on what is causing these events so I run the code: `Get-WinEvent -FilterHashtable @{LogName='System'; Id=7009} -MaxEvents 10 |
+Select-Object TimeCreated, Message` This will zoom out to the last 10 events and give more details as to what is causing each delay. 
+<img width="1224" height="283" alt="image" src="https://github.com/user-attachments/assets/a8bd02d6-03f2-40b3-a920-22c07e251ed8" />
+<br> The events are unrelated which doesn't necessarily point to each service being broken but possibly a background issue. Next step is to find out what else is going on with the computer to trigger these events using the timestamps that the event occurs. 
+Running command `Get-WinEvent -FilterHashtable @{LogName='System'; StartTime=(Get-Date '8/31/2026 9:40 AM')} | Select-Object TimeCreated, ID, ProviderName, Message` I can see what goes on that triggers these events. 
+<img width="1913" height="849" alt="image" src="https://github.com/user-attachments/assets/8ed22b47-4519-4742-8065-68b84d998c75" />
+<br>
+
