@@ -139,6 +139,8 @@ This will give me the timeline of the Events again.
 <img width="1220" height="914" alt="image" src="https://github.com/user-attachments/assets/c6adfc23-9815-4e4e-8d2c-95a2d6f0adf4" />
 <br>
 Going to now look at the Windows Store and see what events show up there. In event viewer go: Applications and Services Logs > Microsoft > Windows > Store > Operational
-<img width="1425" height="912" alt="image" src="https://github.com/user-attachments/assets/84f76e53-8d6c-4641-88ab-0ead8ca49940" />
+<img width="1422" height="908" alt="image" src="https://github.com/user-attachments/assets/72291e52-88c7-4f6e-a0ce-eb3256001cb4" />
 <br>
-Looking at the events in this timeframe I can see what was trying to happen. There are only two different types of events, `2005` and `2006`
+Looking at the events in this timeframe I can see what was trying to happen. There are only two different types of events, 2005 and 2006 I'm currently only interested in events that happened at 9:36:36 AM as that is when I got Event 20. 
+All of the three event 2006s had different messages. In conclusion what happened in this timeframe was 3 working updates with 2 idling. 
+<img width="1197" height="900" alt="image" src="https://github.com/user-attachments/assets/68d559d1-ea29-4acb-921e-5ed33aa1bdd1" />
