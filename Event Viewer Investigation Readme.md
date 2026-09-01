@@ -143,4 +143,5 @@ Going to now look at the Windows Store and see what events show up there. In eve
 <br>
 Looking at the events in this timeframe I can see what was trying to happen. There are only two different types of events, 2005 and 2006 I'm currently only interested in events that happened at 9:36:36 AM as that is when I got Event 20. 
 All of the three event 2006s had different messages. In conclusion what happened in this timeframe was 3 working updates with 2 idling. 
-<img width="1197" height="900" alt="image" src="https://github.com/user-attachments/assets/68d559d1-ea29-4acb-921e-5ed33aa1bdd1" />
+<img width="1197" height="900" alt="image" src="https://github.com/user-attachments/assets/991c69b3-c864-4efe-91c1-3aa950210863" />
+I know that one had failed after two attempts with the error code: `0x80073D02` 
