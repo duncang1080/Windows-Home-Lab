@@ -103,3 +103,10 @@ This shows three distinct events with additional context of what was happening b
 The second sequence draws my attention more because I see Event 20 in there which was part of my initial list. So there could be a possible link here. 
 Taking a look at event 43, the message will say what update Windows was trying to install. 
 <img width="626" height="435" alt="image" src="https://github.com/user-attachments/assets/bb707af9-b8cd-43de-905f-79affdefd317" />
+<br>
+Taking a look at Event 7040 to see what the BITS was doing. 
+BITS went from a automatic start to a demand start. Which seems like it triggered when the automatic update did not go through. 
+Next step is to check what did get successfully installed by checking event 19. 
+<img width="620" height="433" alt="image" src="https://github.com/user-attachments/assets/6cd07002-3e9b-4572-be5b-129c05a5e8be" />
+<br>
+Which is a calculator update not the web experience. 
