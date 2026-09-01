@@ -110,3 +110,35 @@ Next step is to check what did get successfully installed by checking event 19.
 <img width="620" height="433" alt="image" src="https://github.com/user-attachments/assets/6cd07002-3e9b-4572-be5b-129c05a5e8be" />
 <br>
 Which is a calculator update not the web experience. 
+This makes event 20 more interesting now, since it is a failed update event. 
+### Event 20
+<br>
+<img width="622" height="431" alt="image" src="https://github.com/user-attachments/assets/119ee374-21a3-44f5-a1d0-efe9b072fbb4" />
+<br>
+There is an error code in this message `0x80073D02`. Windows could not update because the resources required for it were already in use. 
+Next step is in powershell, to run command: `Get-WinEvent -FilterHashtable @{LogName='System'; Id=20} -MaxEvents 10 |
+Select-Object TimeCreated, Message` to find out how many times this has failed. 
+<img width="1097" height="414" alt="image" src="https://github.com/user-attachments/assets/0bec61df-0657-4978-8439-76a82eb06ffa" />
+<br> 
+So it's happened 4 times over the past few days, Next step is to try and find out what is holding it up. 
+Going back to Event Viewer and looking at the details of Event 20, it doesn't give any additional useful info. 
+<img width="622" height="432" alt="image" src="https://github.com/user-attachments/assets/74feead9-5575-4b84-ab57-5f73e2aa663f" />
+<br>
+Next step is in Event Viewer, go to: Applications and Services Logs > Microsoft > Windows > AppXDeploymentServer > Operational
+<img width="1917" height="963" alt="image" src="https://github.com/user-attachments/assets/0aef060f-e044-4a93-af32-464c73dc21d9" />
+<br> 
+What I'm looking for here is events that triggered around the same time as the log I ran in powershell so around 9:30 AM
+<img width="1584" height="1026" alt="image" src="https://github.com/user-attachments/assets/1682caef-796d-49ba-9ad4-87e4b5246eb7" />
+<br>
+Nothing Pops up in the 9:30 AM timeframe
+Looking back at the log, I filter the timeframe for the events that happened between 9:30 and 9:45 AM on 8/31/26.  
+<br>
+<img width="537" height="548" alt="image" src="https://github.com/user-attachments/assets/b3b0eca8-45a8-4690-b25d-4a910abbb879" />
+<br>
+This will give me the timeline of the Events again. 
+<img width="1220" height="914" alt="image" src="https://github.com/user-attachments/assets/c6adfc23-9815-4e4e-8d2c-95a2d6f0adf4" />
+<br>
+Going to now look at the Windows Store and see what events show up there. In event viewer go: Applications and Services Logs > Microsoft > Windows > Store > Operational
+<img width="1425" height="912" alt="image" src="https://github.com/user-attachments/assets/84f76e53-8d6c-4641-88ab-0ead8ca49940" />
+<br>
+Looking at the events in this timeframe I can see what was trying to happen. There are only two different types of events, `2005` and `2006`
