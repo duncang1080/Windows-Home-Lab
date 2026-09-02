@@ -145,3 +145,26 @@ Looking at the events in this timeframe I can see what was trying to happen. The
 All of the three event 2006s had different messages. In conclusion what happened in this timeframe was 3 working updates with 2 idling. 
 <img width="1197" height="900" alt="image" src="https://github.com/user-attachments/assets/991c69b3-c864-4efe-91c1-3aa950210863" />
 I know that one had failed after two attempts with the error code: `0x80073D02` 
+
+### Event 7011
+In Event Viewer, I look for Event 7011 in Windows Logs > System. 
+<img width="622" height="430" alt="image" src="https://github.com/user-attachments/assets/ae04aa8f-0129-491a-a4a0-7be3389494d5" />
+<br>
+<img width="1220" height="180" alt="image" src="https://github.com/user-attachments/assets/2dbbf138-b821-4a1d-a7e0-e2e1546c1c07" />
+<br>
+Looking at the Events, This one was only recurring earlier in the month, before I updated drivers.  
+I run the command: `Get-CimInstance Win32_Service | Where-Object {\(_.Name -like "*PIE*" -or \)_.DisplayName -like "PIE"} | Select-Object Name, DisplayName, State, StartMode, PathName | Format-List` 
+<img width="1663" height="223" alt="image" src="https://github.com/user-attachments/assets/8f84577d-99a5-4b2a-9d7c-3e7ae5323b96" />
+<br>
+The service is running and given that it has not reoccurred since, I'd call this a historical event. 
+
+### Event 7022
+<img width="628" height="433" alt="image" src="https://github.com/user-attachments/assets/e4971fe2-fa94-4191-977b-028a836c7e1d" />
+<br>
+There's been some more reoccurring instances with this one as recently as today. 
+<img width="1160" height="100" alt="image" src="https://github.com/user-attachments/assets/ee8828c6-580c-44c8-ab10-df018e3c0685" />
+<br>
+To check the status of DoSvc, run the command in powershell: `Get-Service DoSvc | Select-Object Name,Status,StartType`
+<img width="694" height="133" alt="image" src="https://github.com/user-attachments/assets/d5307bdf-9968-43e0-a86b-49a06be9cd45" />
+<br>
+Despite having a hang up, it is currently running 
