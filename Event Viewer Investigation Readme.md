@@ -176,3 +176,11 @@ Checking the 10016 event right below the 7022 event to see if they are related.
 <br> 
 They are not. So going forward given that DoSvc was hung up but is now running, it does not warrant further investigation. 
 
+## Time Service Event 34
+<img width="627" height="433" alt="image" src="https://github.com/user-attachments/assets/7a15b627-ac77-4695-93b8-f16fcbcd037c" />
+<br>
+The clock on the Laptop is giving an incorrect time, but the date is correct. 
+I go to clock settings and see that when I setup Windows, either it was me or windows that set the laptop to Pacific Standard Time.
+<img width="876" height="718" alt="image" src="https://github.com/user-attachments/assets/f19a97ff-36a6-4ea2-a257-c08d54367418" />
+<br>
+Change the time to Eastern Standard Time as I am on the east coast, and sync the laptop when done. This event has not popped up in 22 days. It would be worth periodically monitering if it occurs again. 
