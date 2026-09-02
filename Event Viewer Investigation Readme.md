@@ -168,3 +168,11 @@ To check the status of DoSvc, run the command in powershell: `Get-Service DoSvc 
 <img width="694" height="133" alt="image" src="https://github.com/user-attachments/assets/d5307bdf-9968-43e0-a86b-49a06be9cd45" />
 <br>
 Despite having a hang up, it is currently running 
+Next step is to see what other events happened around 9/2/26 at 8:32:36 AM
+<img width="1260" height="280" alt="image" src="https://github.com/user-attachments/assets/b68e9e26-d5a1-4a5a-8bf6-4f7c4f86a353" />
+<br>
+Checking the 10016 event right below the 7022 event to see if they are related. 
+<img width="1434" height="433" alt="image" src="https://github.com/user-attachments/assets/d341d166-008a-4462-9298-09f34b23af66" />
+<br> 
+They are not. So going forward given that DoSvc was hung up but is now running, it does not warrant further investigation. 
+
