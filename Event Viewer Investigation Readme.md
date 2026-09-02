@@ -184,3 +184,5 @@ I go to clock settings and see that when I setup Windows, either it was me or wi
 <img width="876" height="718" alt="image" src="https://github.com/user-attachments/assets/f19a97ff-36a6-4ea2-a257-c08d54367418" />
 <br>
 Change the time to Eastern Standard Time as I am on the east coast, and sync the laptop when done. This event has not popped up in 22 days. It would be worth periodically monitering if it occurs again. 
+## Conclusion
+Before I continue further with diagnosing the unresolved events, I will clear the event viewer and over the next couple days check to see what comes back.  
