@@ -74,6 +74,7 @@ Still in powershell, I run the command: `Get-Service wuauserv, BITS, WinDefend |
 <br>
 BITS and Windows Update, are stopped and on manual activation. That does not mean that they are broken as they are on demand type services. So I will check to see if they are disabled in powershell. 
 To check if they are disabled I run command: `sc.exe qc BITS` and `sc.exe qc wuauserv`
+<br>
 <img width="780" height="512" alt="image" src="https://github.com/user-attachments/assets/6a52ea8f-a4f7-4af2-8a4c-d38481db2c66" />
 <br>
 This confirms that they are not disabled, and are on "Demand Start" or when they are needed they will run. 
