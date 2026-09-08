@@ -95,9 +95,30 @@ Confirmed the adapter is running with no current issues.
 
 ### TPM and Security 
 To check over to make sure the secure boot and TPM are running, in powershell I run the command `Confirm-SecureBootUEFI` and command `Get-TPM`
+<br>
 <img width="418" height="418" alt="image" src="https://github.com/user-attachments/assets/0e373841-3324-4c17-a38c-6fac506ad788" />
 <br>
 Both are good. 
 
 ### System File Integrity
 I run command `sfc /verfiyonly` to scan the system for any issues. 
+<br>
+<img width="555" height="169" alt="image" src="https://github.com/user-attachments/assets/08086a4f-a6ac-4cdc-a917-31b88318ce02" />
+<br>
+
+### Windows Update
+To see the recent updates Windows have done I run the command `Get-WinEvent -FilterHashtable @{LogName = 'System' ProviderName = 'Microsoft-Windows-WindowsUpdateClient'} -MaxEvents 10 |Select-Object TimeCreated, Id, LevelDisplayName, Message`
+<img width="1897" height="305" alt="image" src="https://github.com/user-attachments/assets/fa7fc4d7-a690-443b-baf1-d808b25f0ada" />
+<br>
+There was one failed update, Event 20 with error code `0x80073D02` which was previously investigated. 
+
+### Startup Applications 
+Now to see what apps Windows has running on start up. I will check to see if there are any unnecessary apps on startup that bog down the system. 
+Using command `Get-CimInstance Win32_StartupCommand` I can see the list of apps that start with windows booting up.
+<img width="2196" height="165" alt="image" src="https://github.com/user-attachments/assets/309d70fb-dcfa-4991-aa3b-abc8e161d57d" />
+<br>
+This is to just take inventory of what apps are there, and not to make changes unless there was a surprise. 
+<br>
+<br>
+<br>
+This concludes the initial health check and triage of the PC.  
