@@ -8,7 +8,7 @@ Then I will investigate the Service Control Manager telling me that Widows servi
 
 ## TPM-WMI Event 1041 and 1801
 <p align="left">TPM-WMI 1041: A critical component failed a pre-attestation health check.
-I open File Explorer and type this path into the address bar: `C:\Windows\Logs\Measured Boot` Looking for the JSON File described in the message. 
+I open File Explorer and type this path into the address bar `C:\Windows\Logs\Measured Boot` Looking for the JSON File described in the message. 
 <br><br>
  <img width="617" height="426" alt="image" src="https://github.com/user-attachments/assets/606172d1-2fb4-496b-a270-e3b6b5d6628f" />
 <img width="1118" height="293" alt="image" src="https://github.com/user-attachments/assets/c69dab19-3e17-42c0-97bc-3eb226aaab66" />
@@ -43,7 +43,7 @@ Turns out there is a certificate accessible but is not currently available at th
 Switching to event 1801, I go powershell and type `Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot`
 <img width="810" height="325" alt="image" src="https://github.com/user-attachments/assets/deb7fec7-93ce-437b-a919-a8cc484af800" />
 <br>
-Next in powershell, I run this command: `Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot\Servicing" |
+Next in powershell, I run this command `Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\SecureBoot\Servicing" |
 Select-Object UEFICA2023Status, WindowsUEFICA2023Capable, UEFICA2023Error, UEFICA2023ErrorEvent`
 <img width="885" height="191" alt="image" src="https://github.com/user-attachments/assets/857e946c-c8a9-4e4c-ba29-aca2f258835d" />
 <br>
@@ -116,7 +116,7 @@ This makes event 20 more interesting now, since it is a failed update event.
 <img width="622" height="431" alt="image" src="https://github.com/user-attachments/assets/119ee374-21a3-44f5-a1d0-efe9b072fbb4" />
 <br>
 There is an error code in this message `0x80073D02`. Windows could not update because the resources required for it were already in use. 
-Next step is in powershell, to run command: `Get-WinEvent -FilterHashtable @{LogName='System'; Id=20} -MaxEvents 10 |
+Next step is in powershell, to run command `Get-WinEvent -FilterHashtable @{LogName='System'; Id=20} -MaxEvents 10 |
 Select-Object TimeCreated, Message` to find out how many times this has failed. 
 <img width="1097" height="414" alt="image" src="https://github.com/user-attachments/assets/0bec61df-0657-4978-8439-76a82eb06ffa" />
 <br> 
@@ -144,7 +144,7 @@ Going to now look at the Windows Store and see what events show up there. In eve
 Looking at the events in this timeframe I can see what was trying to happen. There are only two different types of events, 2005 and 2006 I'm currently only interested in events that happened at 9:36:36 AM as that is when I got Event 20. 
 All of the three event 2006s had different messages. In conclusion what happened in this timeframe was 3 working updates with 2 idling. 
 <img width="1197" height="900" alt="image" src="https://github.com/user-attachments/assets/991c69b3-c864-4efe-91c1-3aa950210863" />
-I know that one had failed after two attempts with the error code: `0x80073D02` 
+I know that one had failed after two attempts with the error code `0x80073D02` 
 
 ### Event 7011
 In Event Viewer, I look for Event 7011 in Windows Logs > System. 
@@ -153,7 +153,7 @@ In Event Viewer, I look for Event 7011 in Windows Logs > System.
 <img width="1220" height="180" alt="image" src="https://github.com/user-attachments/assets/2dbbf138-b821-4a1d-a7e0-e2e1546c1c07" />
 <br>
 Looking at the Events, This one was only recurring earlier in the month, before I updated drivers.  
-I run the command: `Get-CimInstance Win32_Service | Where-Object {\(_.Name -like "*PIE*" -or \)_.DisplayName -like "PIE"} | Select-Object Name, DisplayName, State, StartMode, PathName | Format-List` 
+I run the command `Get-CimInstance Win32_Service | Where-Object {\(_.Name -like "*PIE*" -or \)_.DisplayName -like "PIE"} | Select-Object Name, DisplayName, State, StartMode, PathName | Format-List` 
 <img width="1663" height="223" alt="image" src="https://github.com/user-attachments/assets/8f84577d-99a5-4b2a-9d7c-3e7ae5323b96" />
 <br>
 The service is running and given that it has not reoccurred since, I'd call this a historical event. 
@@ -164,7 +164,7 @@ The service is running and given that it has not reoccurred since, I'd call this
 There's been some more reoccurring instances with this one as recently as today. 
 <img width="1160" height="100" alt="image" src="https://github.com/user-attachments/assets/ee8828c6-580c-44c8-ab10-df018e3c0685" />
 <br>
-To check the status of DoSvc, run the command in powershell: `Get-Service DoSvc | Select-Object Name,Status,StartType`
+To check the status of DoSvc, run the command in powershell `Get-Service DoSvc | Select-Object Name,Status,StartType`
 <img width="694" height="133" alt="image" src="https://github.com/user-attachments/assets/d5307bdf-9968-43e0-a86b-49a06be9cd45" />
 <br>
 Despite having a hang up, it is currently running 
