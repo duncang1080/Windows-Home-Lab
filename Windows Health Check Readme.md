@@ -88,6 +88,7 @@ To make sure the DNS works I run command: Resolve-DnsName google.com
 <img width="797" height="129" alt="image" src="https://github.com/user-attachments/assets/f56a5ac0-e433-45cf-ac54-4fd45d1a35f5" />
 <br>
 Next, I will check if the adapter is actively sending and receiving packets or is producing any errors with command: `Get-NetAdapterStatistics -Name "Wi-Fi"`
+<br>
 <img width="886" height="125" alt="image" src="https://github.com/user-attachments/assets/364eb0f9-c0eb-4a7e-9be4-eb3d8da0ccfa" />
 <br>
 Confirmed the adapter is running with no current issues. 
