@@ -78,3 +78,16 @@ To check if they are disabled I run command: `sc.exe qc BITS` and `sc.exe qc wua
 <img width="780" height="512" alt="image" src="https://github.com/user-attachments/assets/6a52ea8f-a4f7-4af2-8a4c-d38481db2c66" />
 <br>
 This confirms that they are not disabled, and are on "Demand Start" or when they are needed they will run. 
+
+### Network Connectivity 
+Now checking the wireless AC, in powershell I run commands: `Get-NetAdapter | Where-Object Status -eq "Up" |
+Select-Object Name, InterfaceDescription, Status, LinkSpeed` and `Test-Connection 8.8.8.8 -Count 4` This shows that the AC is running and that I am activly connecting to the WIFI network.
+<img width="1086" height="321" alt="image" src="https://github.com/user-attachments/assets/d8d7d557-ac80-4a0e-b9ad-dee36ec66600" />
+<br>
+To make sure the DNS works I run command: Resolve-DnsName google.com
+<img width="797" height="129" alt="image" src="https://github.com/user-attachments/assets/f56a5ac0-e433-45cf-ac54-4fd45d1a35f5" />
+<br>
+Next, I will check if the adapter is actively sending and receiving packets or is producing any errors with command: `Get-NetAdapterStatistics -Name "Wi-Fi"`
+<img width="886" height="125" alt="image" src="https://github.com/user-attachments/assets/364eb0f9-c0eb-4a7e-9be4-eb3d8da0ccfa" />
+<br>
+Confirmed the adapter is running with no current issues. 
