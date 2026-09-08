@@ -122,4 +122,4 @@ This is to just take inventory of what apps are there, and not to make changes u
 <br>
 <br>
 This concludes the initial health check and triage of the PC.  
-The next phase will be in [PowerShell Automation Readme.md]
+The next phase will be in [PowerShell Automation Readme.md](https://github.com/duncang1080/Windows-Home-Lab/blob/main/PowerShell%20Automation%20Readme.md)
