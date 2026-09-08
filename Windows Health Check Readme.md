@@ -45,7 +45,7 @@ I will show how I resolve these in ["Event Viewer Investigation Readme.md"](http
 ## Startup Check
 
 ### General Info
-In Powershell I run the commands: `Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion, OsBuildNumber, CsName` `(Get-CimInstance Win32_OperatingSystem).LastBootUpTime` `(Get-Date) - (Get-CimInstance Win32_OperatingSystem).LastBootUpTime`
+In Powershell I run the commands `Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion, OsBuildNumber, CsName` `(Get-CimInstance Win32_OperatingSystem).LastBootUpTime` `(Get-Date) - (Get-CimInstance Win32_OperatingSystem).LastBootUpTime`
 <img width="1125" height="736" alt="image" src="https://github.com/user-attachments/assets/207b7770-a115-46cc-b37f-4f268b296c7e" />
 <br>
 This establishes the basic info of the system
@@ -56,39 +56,48 @@ I run commands `Get-CimInstance Win32_Processor | Select-Object Name, NumberOfCo
 This will show what CPU and how many cores/threads the PC has. The second command will tell how much available RAM there is and how much is currently being used. 
 <img width="1139" height="263" alt="image" src="https://github.com/user-attachments/assets/28625afc-5996-4ee4-8339-ce5b14ccadaa" />
 <br>
-Lastly for CPU, I run command: `Get-CimInstance Win32_Processor | Select-Object Name, LoadPercentage` to assess if there is anything loading the CPU that I am unaware of. 
+Lastly for CPU, I run command `Get-CimInstance Win32_Processor | Select-Object Name, LoadPercentage` to assess if there is anything loading the CPU that I am unaware of. 
 <img width="912" height="136" alt="image" src="https://github.com/user-attachments/assets/e11db8a7-ff6e-4c85-aae0-b27121afa99a" />
 <br>
 ### Storage
 Next is to check the capacity and health of the storage. 
-I run command: `Get-PSDrive -PSProvider FileSystem` 
+I run command `Get-PSDrive -PSProvider FileSystem` 
 <img width="852" height="165" alt="image" src="https://github.com/user-attachments/assets/84a7cde1-f822-48dd-9938-3e4c2079c901" />
 <br>
-Now to check the health of the drives I run command: `Get-PhysicalDisk | Select-Object FriendlyName, MediaType, HealthStatus, OperationalStatus, Size`
+Now to check the health of the drives I run command `Get-PhysicalDisk | Select-Object FriendlyName, MediaType, HealthStatus, OperationalStatus, Size`
 <img width="1015" height="244" alt="image" src="https://github.com/user-attachments/assets/2ec661ca-7352-4519-bb53-cd6d3de5585d" />
 <br>
 ### Windows Services 
 Specifically Windows Update, Background Intelligent Transfer Service (BITS), Microsoft Defender Antivirus
-Still in powershell, I run the command: `Get-Service wuauserv, BITS, WinDefend | Select-Object Name, DisplayName, Status, StartType` to see the status of these programs.
+Still in powershell, I run the command `Get-Service wuauserv, BITS, WinDefend | Select-Object Name, DisplayName, Status, StartType` to see the status of these programs.
 <img width="950" height="138" alt="image" src="https://github.com/user-attachments/assets/cbcc717b-d457-4b0d-b11f-273709faa381" />
 <br>
 BITS and Windows Update, are stopped and on manual activation. That does not mean that they are broken as they are on demand type services. So I will check to see if they are disabled in powershell. 
-To check if they are disabled I run command: `sc.exe qc BITS` and `sc.exe qc wuauserv`
+To check if they are disabled I run command `sc.exe qc BITS` and `sc.exe qc wuauserv`
 <br>
 <img width="780" height="512" alt="image" src="https://github.com/user-attachments/assets/6a52ea8f-a4f7-4af2-8a4c-d38481db2c66" />
 <br>
 This confirms that they are not disabled, and are on "Demand Start" or when they are needed they will run. 
 
 ### Network Connectivity 
-Now checking the wireless AC, in powershell I run commands: `Get-NetAdapter | Where-Object Status -eq "Up" |
+Now checking the wireless AC, in powershell I run commands `Get-NetAdapter | Where-Object Status -eq "Up" |
 Select-Object Name, InterfaceDescription, Status, LinkSpeed` and `Test-Connection 8.8.8.8 -Count 4` This shows that the AC is running and that I am activly connecting to the WIFI network.
 <img width="1086" height="321" alt="image" src="https://github.com/user-attachments/assets/d8d7d557-ac80-4a0e-b9ad-dee36ec66600" />
 <br>
 To make sure the DNS works I run command: Resolve-DnsName google.com
 <img width="797" height="129" alt="image" src="https://github.com/user-attachments/assets/f56a5ac0-e433-45cf-ac54-4fd45d1a35f5" />
 <br>
-Next, I will check if the adapter is actively sending and receiving packets or is producing any errors with command: `Get-NetAdapterStatistics -Name "Wi-Fi"`
+Next, I will check if the adapter is actively sending and receiving packets or is producing any errors with command `Get-NetAdapterStatistics -Name "Wi-Fi"`
 <br>
 <img width="886" height="125" alt="image" src="https://github.com/user-attachments/assets/364eb0f9-c0eb-4a7e-9be4-eb3d8da0ccfa" />
 <br>
 Confirmed the adapter is running with no current issues. 
+
+### TPM and Security 
+To check over to make sure the secure boot and TPM are running, in powershell I run the command `Confirm-SecureBootUEFI` and command `Get-TPM`
+<img width="418" height="418" alt="image" src="https://github.com/user-attachments/assets/0e373841-3324-4c17-a38c-6fac506ad788" />
+<br>
+Both are good. 
+
+### System File Integrity
+I run command `sfc /verfiyonly` to scan the system for any issues. 
