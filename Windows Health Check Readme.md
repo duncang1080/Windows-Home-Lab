@@ -123,4 +123,4 @@ This is to just take inventory of what apps are there, and not to make changes u
 <br>
 This concludes the initial health check and triage of the PC.  
 The next phase will be in [PowerShell-Automation.ps1](https://github.com/duncang1080/Windows-Home-Lab/blob/main/PowerShell-Automation.ps1)
-There, I will run a powershell script to automate the comprehensive health check I ran. 
+There, I post the scripts I ran in powershell to automate the comprehensive health check I ran. 
